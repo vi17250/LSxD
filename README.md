@@ -1,3 +1,3 @@
 # lsd
-It's LS with D
+It's like LS, but with a D
 
