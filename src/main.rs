@@ -1,6 +1,7 @@
 use std::io::BufRead;
-use std::io::{self};
-use std::process::Command;
+use std::io::{self, Write};
+use std::process::{Command, Output};
+use std::str::from_utf8;
 
 use clap::Parser;
 
@@ -20,10 +21,14 @@ fn main() -> io::Result<()> {
         .arg("-h")
         .arg(format!("-d {deep}"))
         .output()?
-        .stdout
+        .stdout;
+
+    let lines = from_utf8(&command)
+        .unwrap()
         .lines()
-        .map(|line| line.unwrap().replace("\t", " "))
-        .collect::<Vec<String>>();
-    println!("{:?}", command);
+        .map(|line| line.split_once("\t"))
+        .collect::<Vec<Option<(&str, &str)>>>();
+
+    println!("{:?}", lines);
     Ok(())
 }
