@@ -1,8 +1,7 @@
 use colored::Colorize;
-use std::io::BufRead;
-use std::io::{self, Write};
-use std::process::{Command, Output};
-use std::str::{Lines, from_utf8};
+use std::io;
+use std::process::Command;
+use std::str::from_utf8;
 
 use clap::Parser;
 
