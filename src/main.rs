@@ -36,7 +36,7 @@ fn main() -> io::Result<()> {
 
     Ok(())
 }
-fn display<'a>(lines: &Directories) {
+fn display(lines: &Directories) {
     for line in lines {
         match line {
             Some((size, path)) => println!("{} {}", size.red().bold(), path.blue().bold()),
