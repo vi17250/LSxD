@@ -13,3 +13,8 @@ homepage= "https://github.com/vi17250/LSxD"
 [dependencies]
 clap = { version = "4.5.40", features = ["derive"] }
 colored = "3.0.0"
+
+# The profile that 'dist' will build with
+[profile.dist]
+inherits = "release"
+lto = "thin"
