@@ -1,11 +1,9 @@
 mod convert;
 use clap::Parser;
-use colored::Colorize;
-use convert::convert;
+use convert::Colored;
 use std::io;
 use std::process::Command;
 use std::str::from_utf8;
-
 type Directories<'a> = Vec<Option<(&'a str, &'a str)>>;
 
 #[derive(Parser, Debug)]
@@ -40,7 +38,7 @@ fn main() -> io::Result<()> {
 fn display(lines: &Directories) {
     for line in lines {
         match line {
-            Some((size, path)) => println!("{} {}", convert(size).bold(), path),
+            Some((size, path)) => println!("{} {}", size.colored(), path),
             None => (),
         };
     }
