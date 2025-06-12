@@ -17,6 +17,7 @@ All notable changes to this project will be documented in this file. See [conven
 - 💡a line is a vector of tuple - ([265b2ea](https://github.com/vi17250/LSxD/commit/265b2eaa23876f56bdd69af8b865fcfb871c6b16)) - vi17250
 - 💡 remove useless imports - ([f29ce46](https://github.com/vi17250/LSxD/commit/f29ce4661825a10c11f59ba702b019502dcaeca0)) - vi17250
 - 💡 remove useless lifetime parameter - ([3e53dcf](https://github.com/vi17250/LSxD/commit/3e53dcf07da4011cf6c50baa89b90a76ed25785c)) - vi17250
+- 💡 Colored trait applies colors to &str - ([bd5423d](https://github.com/vi17250/LSxD/commit/bd5423d9a12fc80e224300ffcfbcfc991ad61165)) - vi17250
 
 ### 📚 Documentation
 
