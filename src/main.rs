@@ -1,9 +1,10 @@
+mod convert;
+use clap::Parser;
 use colored::Colorize;
+use convert::convert;
 use std::io;
 use std::process::Command;
 use std::str::from_utf8;
-
-use clap::Parser;
 
 type Directories<'a> = Vec<Option<(&'a str, &'a str)>>;
 
@@ -17,7 +18,6 @@ struct Args {
 
 fn main() -> io::Result<()> {
     let args = Args::parse();
-
     let program = "du";
     let deep = args.deep;
     let command = Command::new(program)
@@ -36,10 +36,11 @@ fn main() -> io::Result<()> {
 
     Ok(())
 }
+
 fn display(lines: &Directories) {
     for line in lines {
         match line {
-            Some((size, path)) => println!("{} {}", size.red().bold(), path.blue().bold()),
+            Some((size, path)) => println!("{} {}", convert(size).bold(), path),
             None => (),
         };
     }
