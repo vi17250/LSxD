@@ -10,6 +10,7 @@ All notable changes to this project will be documented in this file. See [conven
 - 🎸 list directories - ([86dbc65](https://github.com/vi17250/LSxD/commit/86dbc652b272fe54a949ea0254c9f09c9138ac7d)) - vi17250
 - 🎸 using '-d' make the software recursive - ([f646542](https://github.com/vi17250/LSxD/commit/f6465425819bb8dc25d53be9656f8f6a1411b643)) - vi17250
 - 🎸 lines are displayed in the terminal - ([403aceb](https://github.com/vi17250/LSxD/commit/403aceb1a9ea9c0e73b08acfddcd5b14f1e4249d)) - vi17250
+- 🎸 Sizes are colored by multiples - ([741a271](https://github.com/vi17250/LSxD/commit/741a271d80589a447fd8261fc3074bc2e96ae18c)) - vi17250
 
 ### 🚜 Refactor
 
