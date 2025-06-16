@@ -65,7 +65,7 @@ fn main() -> io::Result<()> {
 fn display(lines: &Directories) {
     for line in lines {
         match line {
-            Some((size, path)) => println!("{} {}", size.colored(), path),
+            Some((size, path)) => println!("{} {}", size.coloring(), path),
             None => (),
         };
     }

@@ -1,11 +1,11 @@
 use colored::{ColoredString, Colorize};
 
 pub trait Colored {
-    fn colored(self) -> ColoredString;
+    fn coloring(self) -> ColoredString;
 }
 
 impl Colored for &str {
-    fn colored(self) -> ColoredString {
+    fn coloring(self) -> ColoredString {
         let string = match self.to_lowercase() {
             v if v.contains("k") => self.green(),
             v if v.contains("m") => self.yellow(),
@@ -18,21 +18,21 @@ impl Colored for &str {
 
 mod test {
 
-    use crate::convert::Colored;
+    use crate::*;
     use colored::Colorize;
 
     #[test]
     fn it_returns_value_below_1Mb() {
-        assert_eq!("10K".colored(), "10K".green().bold());
+        assert_eq!("10K".coloring(), "10K".green().bold());
     }
 
     #[test]
     fn it_returns_value_above_1Mb() {
-        assert_eq!("10M".colored(), "10M".yellow().bold());
+        assert_eq!("10M".coloring(), "10M".yellow().bold());
     }
 
     #[test]
     fn it_returns_value_above_1Gb() {
-        assert_eq!("10G".colored(), "10G".red().bold());
+        assert_eq!("10G".coloring(), "10G".red().bold());
     }
 }
