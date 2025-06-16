@@ -1,10 +1,17 @@
-mod convert;
+mod color;
+mod parsers;
+
 use clap::Parser;
-use convert::Colored;
 use std::io;
 use std::process::Command;
 use std::str::from_utf8;
+
+use color::Colored;
+use parsers::files::Parse;
+
 type Directories<'a> = Vec<Option<(&'a str, &'a str)>>;
+
+// see "directories"
 
 #[derive(Parser, Debug)]
 #[command(version, about, long_about = None)]
@@ -24,13 +31,33 @@ fn main() -> io::Result<()> {
         .output()?
         .stdout;
 
-    let lines = from_utf8(&command)
+    let directories = from_utf8(&command)
         .unwrap()
         .lines()
         .map(|line| line.split_once("\t"))
         .collect::<Directories>();
 
-    display(&lines);
+    let program = "ls";
+    let command = Command::new(program)
+        .arg("-n")
+        .arg("-h")
+        .arg("-a")
+        .output()?
+        .stdout;
+
+    let files = from_utf8(&command)
+        .unwrap()
+        .lines()
+        .skip(1)
+        .filter(|line| !line.contains("4,0K d"))
+        .map(|line| line.parse_files())
+        .for_each(|line| {
+            let r = line.as_str().split_once(" ");
+            println!("R: {:?}", r);
+        });
+    dbg!(files);
+
+    display(&directories);
 
     Ok(())
 }
