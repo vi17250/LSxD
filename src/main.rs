@@ -2,11 +2,11 @@ use clap::Parser;
 use std::io;
 
 mod commands;
-use commands::get_directories;
+use commands::directories;
 mod output_color;
 use output_color::Colored;
 
-type Directories = Vec<(String, String)>;
+type Lines = Vec<(String, String)>;
 
 #[derive(Parser, Debug)]
 #[command(version, about, long_about = None)]
@@ -18,13 +18,13 @@ struct Args {
 fn main() -> io::Result<()> {
     let args = Args::parse();
     let deepth = args.deepth;
-    let lines = get_directories(deepth);
+    let lines = directories::command(deepth);
     display(&lines);
 
     Ok(())
 }
 
-fn display(lines: &Directories) {
+fn display(lines: &Lines) {
     for (size, path) in lines {
         println!("{} {}", size.coloring(), path);
     }
