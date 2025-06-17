@@ -1,15 +1,16 @@
-mod convert;
 use clap::Parser;
-use convert::Colored;
 use std::io;
 use std::process::Command;
 use std::str::from_utf8;
+
+mod output_color;
+use output_color::Colored;
+
 type Directories<'a> = Vec<Option<(&'a str, &'a str)>>;
 
 #[derive(Parser, Debug)]
 #[command(version, about, long_about = None)]
 struct Args {
-    /// Command recursion
     #[arg(short, long, default_value_t = 1)]
     deep: u8,
 }
@@ -38,7 +39,7 @@ fn main() -> io::Result<()> {
 fn display(lines: &Directories) {
     for line in lines {
         match line {
-            Some((size, path)) => println!("{} {}", size.colored(), path),
+            Some((size, path)) => println!("{} {}", size.coloring(), path),
             None => (),
         };
     }
