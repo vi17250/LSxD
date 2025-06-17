@@ -16,6 +16,7 @@ impl Colored for &str {
     }
 }
 
+#[allow(warnings)]
 mod test {
 
     use crate::output_color::Colored;
