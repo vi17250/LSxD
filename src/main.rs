@@ -1,51 +1,31 @@
 use clap::Parser;
 use std::io;
-use std::process::Command;
-use std::str::from_utf8;
 
+mod commands;
+use commands::get_directories;
 mod output_color;
 use output_color::Colored;
 
-type Directories<'a> = Vec<Option<(&'a str, &'a str)>>;
+type Directories = Vec<(String, String)>;
 
 #[derive(Parser, Debug)]
 #[command(version, about, long_about = None)]
 struct Args {
     #[arg(short, long, default_value_t = 1)]
-    deep: u8,
-}
-
-fn get_directories() {
-    let args = Args::parse();
-    let program = "du";
-    let deep = args.deep;
-    let command = Command::new(program)
-        .arg("-h")
-        .arg(format!("-d {deep}"))
-        .output()
-        .expect("WTF")
-        .stdout;
-
-    let lines = from_utf8(&command)
-        .unwrap()
-        .lines()
-        .map(|line| line.split_once("\t"))
-        .collect::<Directories>();
-    dbg!(lines);
+    deepth: u8,
 }
 
 fn main() -> io::Result<()> {
-    let _lines = get_directories();
-    // display(&lines);
+    let args = Args::parse();
+    let deepth = args.deepth;
+    let lines = get_directories(deepth);
+    display(&lines);
 
     Ok(())
 }
 
 fn display(lines: &Directories) {
-    for line in lines {
-        match line {
-            Some((size, path)) => println!("{} {}", size.coloring(), path),
-            None => (),
-        };
+    for (size, path) in lines {
+        println!("{} {}", size.coloring(), path);
     }
 }
