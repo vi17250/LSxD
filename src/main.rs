@@ -5,8 +5,8 @@ mod commands;
 use commands::{directories, files};
 mod output_color;
 use output_color::Colored;
-
-type Lines = Vec<(String, String)>;
+mod types;
+use types::Lines;
 
 #[derive(Parser, Debug)]
 #[command(version, about, long_about = None)]
@@ -27,7 +27,7 @@ fn main() -> io::Result<()> {
 }
 
 fn display(lines: &Lines) {
-    for (size, path) in lines {
+    for (_entity, size, path) in lines {
         println!("{} {}", size.coloring(), path);
     }
 }

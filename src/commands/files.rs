@@ -1,8 +1,7 @@
+use crate::types::{Entity, Lines};
 use regex::Regex;
 use std::process::Command;
 use std::str::from_utf8;
-
-type Lines = Vec<(String, String)>;
 
 pub fn command() -> Lines {
     let program = "ls";
@@ -23,7 +22,7 @@ pub fn command() -> Lines {
         r"^(\d+,?\d*\s*[A-z]{1})\s*(?P<permissions>-[rwx-]{9})\s*(?P<links>\d+)\s*(?P<groups>\d+\s*\d+)\s*(?P<size>\d+,?\d*\s*[A-Z]?)\s*(?P<date>[a-zA-ZÀ-Ÿ-. \d:]*\s*[\d:]{5})\s*(?P<filename>.*)$",
     );
 
-        lines
+    lines
         .iter()
         .map(|line| {
             let caps = &regex.as_ref().expect("WTF").captures(line).expect("WTF");
@@ -34,7 +33,7 @@ pub fn command() -> Lines {
             dst.remove(0);
             dst.remove(0);
 
-            (size, dst)
+            (Entity::File, size, dst)
         })
-        .collect::<Vec<(String, String)>>()
+        .collect::<Lines>()
 }
