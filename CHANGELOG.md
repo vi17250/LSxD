@@ -11,6 +11,7 @@ All notable changes to this project will be documented in this file. See [conven
 - 🎸 using '-d' make the software recursive - ([f646542](https://github.com/vi17250/LSxD/commit/f6465425819bb8dc25d53be9656f8f6a1411b643)) - vi17250
 - 🎸 lines are displayed in the terminal - ([403aceb](https://github.com/vi17250/LSxD/commit/403aceb1a9ea9c0e73b08acfddcd5b14f1e4249d)) - vi17250
 - 🎸 Sizes are colored by multiples - ([741a271](https://github.com/vi17250/LSxD/commit/741a271d80589a447fd8261fc3074bc2e96ae18c)) - vi17250
+- 🎸 display files - ([97565be](https://github.com/vi17250/LSxD/commit/97565be516d2650dc4002b9ecfa5177449e0cd16)) - vi17250
 
 ### 🚜 Refactor
 
@@ -20,6 +21,7 @@ All notable changes to this project will be documented in this file. See [conven
 - 💡 Colored trait applies colors to &str - ([bd5423d](https://github.com/vi17250/LSxD/commit/bd5423d9a12fc80e224300ffcfbcfc991ad61165)) - vi17250
 - 💡 wording colored -> coloring - ([b0ab1eb](https://github.com/vi17250/LSxD/commit/b0ab1eb0eb5901b5c01b1110b364a27418d66679)) - vi17250
 - 💡 commands are in a separate file - ([de5318d](https://github.com/vi17250/LSxD/commit/de5318d2e22a55258af8fbcdf30f7d71732a5d31)) - vi17250
+- 💡 folder structure - ([d0535c7](https://github.com/vi17250/LSxD/commit/d0535c702f4c0d6a31c14d908b630b6007054d63)) - vi17250
 
 ### 📚 Documentation
 
