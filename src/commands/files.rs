@@ -19,7 +19,7 @@ pub fn command() -> Lines {
         .collect::<Vec<&str>>();
 
     let regex = Regex::new(
-        r"^(\d+,?\d*\s*[A-z]{1})\s*(?P<permissions>-[rwx-]{9})\s*(?P<links>\d+)\s*(?P<groups>\d+\s*\d+)\s*(?P<size>\d+,?\d*\s*[A-Z]?)\s*(?P<date>[a-zA-ZÀ-Ÿ-. \d:]*\s*[\d:]{5})\s*(?P<filename>.*)$",
+        r"^\s*(?P<link_size>\d+,?\d*\s*[A-Z]{1})\s*(?P<permissions>-[rwx-]{9})\s*(?P<links>\d+)\s*(?P<groups>\d+\s*\d+)\s*(?P<size>\d+,?\d*\s*[A-Z]?)\s*(?P<date>[a-zA-ZÀ-Ÿ-. \d:]*\s*[\d:]{4,5})\s*(?P<filename>.*)$",
     );
 
     lines
