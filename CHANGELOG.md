@@ -16,6 +16,7 @@ All notable changes to this project will be documented in this file. See [conven
 ### 🐛 Bug Fixes
 
 - 🐛 Each line knows it's type (file or directory) - ([da9879b](https://github.com/vi17250/LSxD/commit/da9879be783d67e5e755499cd8f64f3eaaf60e1a)) - vi17250
+- 🐛 parse files with white spaces and year - ([0990d1a](https://github.com/vi17250/LSxD/commit/0990d1a9a675fc00e569f9032e478e917593f928)) - vi17250
 
 ### 🚜 Refactor
 
@@ -34,6 +35,10 @@ All notable changes to this project will be documented in this file. See [conven
 - ✏️ Update project Name - ([ba8e6db](https://github.com/vi17250/LSxD/commit/ba8e6db7dc2a8b162594831142164474c119195d)) - vi17250
 - ✏️ Cargo manifest gives project informations - ([8bf157c](https://github.com/vi17250/LSxD/commit/8bf157ceed8a34c797716e344df304cde8766e6c)) - vi17250
 - ✏️ Be patient - ([f65d928](https://github.com/vi17250/LSxD/commit/f65d9284800b397f02a6744ba06cfbc7adfc1b6a)) - vi17250
+
+### 🧪 Testing
+
+- 💍 command file check all possibilities - ([402cc52](https://github.com/vi17250/LSxD/commit/402cc526ce70ba9133e3d211a2a2128ed18e0267)) - vi17250
 
 ### ⚙️ Miscellaneous Tasks
 
