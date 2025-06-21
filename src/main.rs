@@ -2,7 +2,7 @@ use clap::Parser;
 use std::io;
 
 mod commands;
-use commands::directories;
+use commands::{directories, files};
 mod output_color;
 use output_color::Colored;
 
@@ -18,9 +18,12 @@ struct Args {
 fn main() -> io::Result<()> {
     let args = Args::parse();
     let deepth = args.deepth;
-    let lines = directories::command(deepth);
-    display(&lines);
+    let mut directories = directories::command(deepth);
 
+    let files = files::command();
+    directories.extend(files);
+    display(&directories);
+    dbg!(directories);
     Ok(())
 }
 
