@@ -23,7 +23,6 @@ fn main() -> io::Result<()> {
     let files = files::command();
     directories.extend(files);
     display(&directories);
-    dbg!(directories);
     Ok(())
 }
 
