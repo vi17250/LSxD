@@ -13,6 +13,10 @@ All notable changes to this project will be documented in this file. See [conven
 - 🎸 Sizes are colored by multiples - ([741a271](https://github.com/vi17250/LSxD/commit/741a271d80589a447fd8261fc3074bc2e96ae18c)) - vi17250
 - 🎸 display files - ([97565be](https://github.com/vi17250/LSxD/commit/97565be516d2650dc4002b9ecfa5177449e0cd16)) - vi17250
 
+### 🐛 Bug Fixes
+
+- 🐛 Each line knows it's type (file or directory) - ([da9879b](https://github.com/vi17250/LSxD/commit/da9879be783d67e5e755499cd8f64f3eaaf60e1a)) - vi17250
+
 ### 🚜 Refactor
 
 - 💡a line is a vector of tuple - ([265b2ea](https://github.com/vi17250/LSxD/commit/265b2eaa23876f56bdd69af8b865fcfb871c6b16)) - vi17250
@@ -22,6 +26,7 @@ All notable changes to this project will be documented in this file. See [conven
 - 💡 wording colored -> coloring - ([b0ab1eb](https://github.com/vi17250/LSxD/commit/b0ab1eb0eb5901b5c01b1110b364a27418d66679)) - vi17250
 - 💡 commands are in a separate file - ([de5318d](https://github.com/vi17250/LSxD/commit/de5318d2e22a55258af8fbcdf30f7d71732a5d31)) - vi17250
 - 💡 folder structure - ([d0535c7](https://github.com/vi17250/LSxD/commit/d0535c702f4c0d6a31c14d908b630b6007054d63)) - vi17250
+- 💡 remove useless code - ([b3e7399](https://github.com/vi17250/LSxD/commit/b3e73994de5c93ebbf0290835711895d3f26dbd0)) - vi17250
 
 ### 📚 Documentation
 
