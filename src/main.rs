@@ -22,12 +22,13 @@ fn main() -> io::Result<()> {
 
     let files = files::command();
     directories.extend(files);
+
     display(&directories);
     Ok(())
 }
 
 fn display(lines: &Lines) {
-    for (_entity, size, path) in lines {
-        println!("{} {}", size.coloring(), path);
+    for (entity, size, path) in lines {
+        println!("{} {} {}", entity.display(), size.coloring(), path);
     }
 }
