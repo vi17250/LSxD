@@ -1,8 +1,8 @@
-use crate::types::{Entity, Lines};
+use crate::types::Directory;
 use std::process::Command;
 use std::str::from_utf8;
 
-pub fn command(deepth: u8) -> Lines {
+pub fn command(deepth: u8) -> Vec<Directory> {
     let program = "du";
     let command = Command::new(program)
         .arg("-h")
@@ -16,9 +16,17 @@ pub fn command(deepth: u8) -> Lines {
         .lines()
         .map(|line| line.split_once("\t"))
         .map(|line| match line {
-            Some((size, file)) => (Entity::Directory, size.to_string(), file.to_string()),
-            None => (Entity::Directory, String::from(""), String::from("")),
+            Some((size, path)) => Directory {
+                path: path.to_string(),
+                size: size.to_string(),
+                files: vec![],
+            },
+            None => Directory {
+                path: String::new(),
+                size: String::new(),
+                files: vec![],
+            },
         })
-        .collect::<Lines>();
+        .collect::<Vec<Directory>>();
     lines
 }

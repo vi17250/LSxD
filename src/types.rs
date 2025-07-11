@@ -13,4 +13,15 @@ impl Entity {
     }
 }
 
-pub type Lines = Vec<(Entity, String, String)>;
+#[derive(Debug, PartialEq)]
+pub struct File {
+    pub name: String,
+    pub size: String,
+}
+
+#[derive(Debug)]
+pub struct Directory {
+    pub path: String,
+    pub size: String,
+    pub files: Vec<File>,
+}
