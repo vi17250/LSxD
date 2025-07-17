@@ -12,7 +12,7 @@ use output_color::Colored;
 #[derive(Parser, Debug)]
 #[command(version, about, long_about = None)]
 struct Args {
-    #[arg(short, long, default_value_t = 1)]
+    #[arg(short, long, default_value_t = 0)]
     deepth: u8,
 }
 

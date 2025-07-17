@@ -23,5 +23,6 @@ pub struct File {
 pub struct Directory {
     pub path: String,
     pub size: String,
+    pub directories: Vec<Directory>,
     pub files: Vec<File>,
 }

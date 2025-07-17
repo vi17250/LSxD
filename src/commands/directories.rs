@@ -20,11 +20,13 @@ pub fn command(deepth: u8) -> Vec<Directory> {
                 path: path.to_string(),
                 size: size.to_string(),
                 files: vec![],
+                directories: vec![],
             },
             None => Directory {
                 path: String::new(),
                 size: String::new(),
                 files: vec![],
+                directories: vec![],
             },
         })
         .collect::<Vec<Directory>>();
