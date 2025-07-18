@@ -6,3 +6,9 @@ pub struct Line {
     pub size: u64,
     pub children: Option<Vec<Line>>,
 }
+
+impl Line {
+    pub fn add(&mut self, lines: Vec<Line>) {
+        self.children = Some(lines);
+    }
+}

@@ -21,7 +21,14 @@ fn main() -> io::Result<()> {
     let deepth = args.deepth;
     let root_dir: Box<Path> = Path::new(ROOT_DIR).into();
     let mut directories: Vec<Line> = lines::command(root_dir);
-    dbg!(directories);
+    for directory in directories.iter_mut() {
+        if let Some(_) = &directory.children {
+            let lines = lines::command(directory.path.clone());
+            directory.add(lines);
+        }
+    }
+
+    dbg!(&directories);
 
     Ok(())
 }
