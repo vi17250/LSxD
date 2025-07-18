@@ -1,40 +1,34 @@
 use clap::Parser;
-use std::io;
+use std::{io, path::Path};
 mod types;
-use types::{Directory, File};
+use types::Line;
 
 mod commands;
-use commands::{directories, files};
+use commands::lines;
 mod output_color;
-use output_color::Colored;
-// use types::Lines;
+
+const ROOT_DIR: &str = ".";
 
 #[derive(Parser, Debug)]
 #[command(version, about, long_about = None)]
 struct Args {
-    #[arg(short, long, default_value_t = 1)]
+    #[arg(short, long, default_value_t = 0)]
     deepth: u8,
 }
 
 fn main() -> io::Result<()> {
     let args = Args::parse();
     let deepth = args.deepth;
-    let mut directories: Vec<Directory> = directories::command(deepth);
-
-    directories.iter_mut().for_each(|dir| {
-        let files: Vec<File> = files::command(dir.path.clone());
-        dir.files = files;
-    });
-
-    display(&directories);
-    Ok(())
-}
-
-fn display(directories: &Vec<Directory>) {
-    for directory in directories {
-        println!("{} {}", directory.size.coloring(), directory.path);
-        for file in &directory.files {
-            println!("\t{} {}", file.size.coloring(), file.name);
+    let root_dir: Box<Path> = Path::new(ROOT_DIR).into();
+    let mut directories: Vec<Line> = lines::command(root_dir);
+    for directory in directories.iter_mut() {
+        if let Some(_) = &directory.children {
+            let lines = lines::command(directory.path.clone());
+            directory.add(lines);
         }
     }
+
+    dbg!(&directories);
+
+    Ok(())
 }

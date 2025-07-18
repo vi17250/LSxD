@@ -1,27 +1,14 @@
+use std::path::Path;
+
 #[derive(Debug, PartialEq)]
-pub enum Entity {
-    Directory,
-    File,
+pub struct Line {
+    pub path: Box<Path>,
+    pub size: u64,
+    pub children: Option<Vec<Line>>,
 }
 
-impl Entity {
-    pub fn display(&self) -> String {
-        match &self {
-            Entity::File => String::from("📑"),
-            Entity::Directory => String::from("📁"),
-        }
+impl Line {
+    pub fn add(&mut self, lines: Vec<Line>) {
+        self.children = Some(lines);
     }
-}
-
-#[derive(Debug, PartialEq)]
-pub struct File {
-    pub name: String,
-    pub size: String,
-}
-
-#[derive(Debug)]
-pub struct Directory {
-    pub path: String,
-    pub size: String,
-    pub files: Vec<File>,
 }
