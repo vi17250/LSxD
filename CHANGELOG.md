@@ -13,12 +13,14 @@ All notable changes to this project will be documented in this file. See [conven
 - 🎸 Sizes are colored by multiples - ([741a271](https://github.com/vi17250/LSxD/commit/741a271d80589a447fd8261fc3074bc2e96ae18c)) - vi17250
 - 🎸 display files - ([97565be](https://github.com/vi17250/LSxD/commit/97565be516d2650dc4002b9ecfa5177449e0cd16)) - vi17250
 - 🎸 icons for files and dirs - ([81244c6](https://github.com/vi17250/LSxD/commit/81244c6dbc8884284d848ba4fac90f2964aef008)) - vi17250
+- 🎸 recursively browse directories - ([3ec8bf9](https://github.com/vi17250/LSxD/commit/3ec8bf99f8006b06a35d290cb3e94e628940dd77)) - vi17250
 
 ### 🐛 Bug Fixes
 
 - 🐛 Each line knows it's type (file or directory) - ([da9879b](https://github.com/vi17250/LSxD/commit/da9879be783d67e5e755499cd8f64f3eaaf60e1a)) - vi17250
 - 🐛 parse files with white spaces and year - ([0990d1a](https://github.com/vi17250/LSxD/commit/0990d1a9a675fc00e569f9032e478e917593f928)) - vi17250
 - 🐛 data are represented via structures - ([55fd666](https://github.com/vi17250/LSxD/commit/55fd666deb3fa9a1358776917234c141305fb419)) - vi17250
+- 🐛 remove useless code - ([c86c2cf](https://github.com/vi17250/LSxD/commit/c86c2cf3a74a14b14f8bfa3183ab451d6b80da59)) - vi17250
 
 ### 🚜 Refactor
 
