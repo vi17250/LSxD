@@ -1,3 +1,4 @@
+use human_bytes::human_bytes;
 use std::fs::read_dir;
 use std::path::PathBuf;
 use std::process::Command;
@@ -24,7 +25,7 @@ pub fn list(path: PathBuf) -> Vec<Entity> {
     dirs
 }
 
-pub fn size(path: PathBuf) -> usize {
+pub fn size(path: PathBuf) -> (usize, String) {
     let program = "du";
     let command = Command::new(program)
         .arg(path)
@@ -40,5 +41,5 @@ pub fn size(path: PathBuf) -> usize {
         .expect("Failes to read size");
 
     let size = line.0.parse::<usize>().expect("Failed to parse size");
-    size
+    (size, human_bytes(size as f64))
 }

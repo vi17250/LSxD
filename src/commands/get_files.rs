@@ -1,4 +1,5 @@
 use fs_extra::dir::get_size;
+use human_bytes::human_bytes;
 use std::fs::read_dir;
 use std::path::PathBuf;
 
@@ -23,10 +24,10 @@ pub fn list(path: PathBuf) -> Vec<Entity> {
     files
 }
 
-pub fn size(path: PathBuf) -> usize {
+pub fn size(path: PathBuf) -> (usize, String) {
     let size = get_size(path)
         .expect("Failed to get size")
         .try_into()
         .expect("Failed to parse size");
-    size
+    (size, human_bytes(size as f64))
 }
