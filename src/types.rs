@@ -11,14 +11,17 @@ pub enum Entity {
 pub struct Directory {
     pub path: PathBuf,
     pub size: usize,
+    pub human_size: String,
     pub children: Vec<Entity>,
 }
 
 impl Directory {
     pub fn new(path: PathBuf) -> Directory {
+        let (size, human_size) = get_dirs::size(path.clone());
         Directory {
             path: path.clone(),
-            size: get_dirs::size(path.clone()),
+            size,
+            human_size,
             children: Vec::new(),
         }
     }
@@ -43,13 +46,16 @@ impl Directory {
 pub struct File {
     pub path: PathBuf,
     pub size: usize,
+    pub human_size: String,
 }
 
 impl File {
     pub fn new(path: PathBuf) -> File {
+        let (size, human_size) = get_files::size(path.clone());
         File {
             path: path.clone(),
-            size: get_files::size(path.clone()),
+            size,
+            human_size,
         }
     }
 }
