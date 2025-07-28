@@ -16,6 +16,7 @@ All notable changes to this project will be documented in this file. See [conven
 - 🎸 recursively browse directories - ([3ec8bf9](https://github.com/vi17250/LSxD/commit/3ec8bf99f8006b06a35d290cb3e94e628940dd77)) - vi17250
 - 🎸 Create new() method for Directory - ([5a8d315](https://github.com/vi17250/LSxD/commit/5a8d3158a69f22218b605a7d41ea9c4160fed262)) - vi17250
 - 🎸 get directory size - ([4f4171b](https://github.com/vi17250/LSxD/commit/4f4171bc3e3f445a53653ea3523cdf664d0e975a)) - vi17250
+- 🎸 list files - ([87aa23d](https://github.com/vi17250/LSxD/commit/87aa23d12d7bcd637ca150af1d1e11da375438ee)) - vi17250
 
 ### 🐛 Bug Fixes
 
@@ -23,6 +24,8 @@ All notable changes to this project will be documented in this file. See [conven
 - 🐛 parse files with white spaces and year - ([0990d1a](https://github.com/vi17250/LSxD/commit/0990d1a9a675fc00e569f9032e478e917593f928)) - vi17250
 - 🐛 data are represented via structures - ([55fd666](https://github.com/vi17250/LSxD/commit/55fd666deb3fa9a1358776917234c141305fb419)) - vi17250
 - 🐛 remove useless code - ([c86c2cf](https://github.com/vi17250/LSxD/commit/c86c2cf3a74a14b14f8bfa3183ab451d6b80da59)) - vi17250
+- 🐛 remove useless import - ([3e52038](https://github.com/vi17250/LSxD/commit/3e520380ee3d5a2dfce16618cccbcbd4d3b042af)) - vi17250
+- 🐛 Entity can be a directory or a file - ([ceb7f27](https://github.com/vi17250/LSxD/commit/ceb7f27f20b90d88350e91f0514b2b25bebbb435)) - vi17250
 
 ### 🚜 Refactor
 
