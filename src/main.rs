@@ -25,9 +25,7 @@ fn main() -> io::Result<()> {
     let deepth = args.deepth;
     let root_dir: PathBuf = PathBuf::from(ROOT_DIR);
 
-    let mut current_dir: Directory = Directory::new(root_dir);
+    let mut current_dir: Directory = Directory::new(root_dir.clone());
     current_dir.get_children(deepth);
-
-    dbg!(&current_dir);
     Ok(())
 }
