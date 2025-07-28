@@ -1,11 +1,13 @@
 use std::fs::read_dir;
 use std::path::PathBuf;
+use std::process::Command;
+use std::str::from_utf8;
 
 use crate::types::Directory;
 
-pub fn command(root_dir: PathBuf) -> Vec<Directory> {
-    let mut dirs: Vec<Directory> = vec![];
-    if let Ok(entries) = read_dir(root_dir) {
+pub fn list(path: PathBuf) -> Vec<Directory> {
+    let mut dirs: Vec<Directory> = Vec::new();
+    if let Ok(entries) = read_dir(path) {
         for entry in entries {
             if let Ok(entry) = entry {
                 if let Ok(file_type) = entry.file_type() {
@@ -19,4 +21,23 @@ pub fn command(root_dir: PathBuf) -> Vec<Directory> {
         }
     }
     dirs
+}
+
+pub fn size(path: PathBuf) -> usize {
+    let program = "du";
+    let command = Command::new(program)
+        .arg(path)
+        .arg("-d 0")
+        .arg("--block-size=1")
+        .output()
+        .expect("WTF")
+        .stdout;
+
+    let line = from_utf8(&command)
+        .expect("Failed to read command")
+        .split_once("\t")
+        .expect("Failes to read size");
+
+    let size = line.0.parse::<usize>().expect("Failed to parse size");
+    size
 }
