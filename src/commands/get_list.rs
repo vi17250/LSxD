@@ -1,19 +1,20 @@
-use fs_extra::dir::get_size;
-use human_bytes::human_bytes;
 use std::fs::read_dir;
 use std::path::PathBuf;
 
-use crate::types::{Entity, File};
+use crate::types::{Directory, Entity, File};
 
 pub fn list(path: PathBuf) -> Vec<Entity> {
-    let mut files: Vec<Entity> = Vec::new();
+    let mut entities: Vec<Entity> = Vec::new();
     if let Ok(entries) = read_dir(path) {
         for entry in entries {
             if let Ok(entry) = entry {
                 if let Ok(file_type) = entry.file_type() {
-                    if file_type.is_file() {
+                    if file_type.is_dir() {
+                        let directory = Directory::new(entry.path());
+                        entities.push(Entity::Directory(directory));
+                    } else if file_type.is_file() {
                         let file = File::new(entry.path());
-                        files.push(Entity::File(file));
+                        entities.push(Entity::File(file));
                     }
                 } else {
                     println!("Couldn't get file type for {:?}", entry.path());
@@ -21,13 +22,5 @@ pub fn list(path: PathBuf) -> Vec<Entity> {
             }
         }
     }
-    files
-}
-
-pub fn size(path: PathBuf) -> (usize, String) {
-    let size = get_size(path)
-        .expect("Failed to get size")
-        .try_into()
-        .expect("Failed to parse size");
-    (size, human_bytes(size as f64))
+    entities
 }

@@ -1,4 +1,4 @@
-use crate::commands::{get_dirs, get_files};
+use crate::commands::{get_list, get_size};
 use std::path::PathBuf;
 
 #[derive(Debug)]
@@ -17,7 +17,7 @@ pub struct Directory {
 
 impl Directory {
     pub fn new(path: PathBuf) -> Directory {
-        let (size, human_size) = get_dirs::size(path.clone());
+        let (size, human_size) = get_size::directory(path.clone());
         Directory {
             path: path.clone(),
             size,
@@ -27,10 +27,7 @@ impl Directory {
     }
 
     pub fn get_children(&mut self, deepth: u8) {
-        self.children = get_dirs::list(self.path.clone());
-        let mut files = get_files::list(self.path.clone());
-
-        self.children.append(&mut files);
+        self.children = get_list::list(self.path.clone());
 
         if deepth > 0 {
             for child in &mut self.children {
@@ -51,7 +48,7 @@ pub struct File {
 
 impl File {
     pub fn new(path: PathBuf) -> File {
-        let (size, human_size) = get_files::size(path.clone());
+        let (size, human_size) = get_size::file(path.clone());
         File {
             path: path.clone(),
             size,
