@@ -1,5 +1,4 @@
 use clap::Parser;
-use std::fs::read_dir;
 use std::io;
 use std::path::PathBuf;
 
