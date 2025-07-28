@@ -3,16 +3,17 @@ use std::path::PathBuf;
 use std::process::Command;
 use std::str::from_utf8;
 
-use crate::types::Directory;
+use crate::types::{Directory, Entity};
 
-pub fn list(path: PathBuf) -> Vec<Directory> {
-    let mut dirs: Vec<Directory> = Vec::new();
+pub fn list(path: PathBuf) -> Vec<Entity> {
+    let mut dirs: Vec<Entity> = Vec::new();
     if let Ok(entries) = read_dir(path) {
         for entry in entries {
             if let Ok(entry) = entry {
                 if let Ok(file_type) = entry.file_type() {
                     if file_type.is_dir() {
-                        dirs.push(Directory::new(entry.path()));
+                        let directory = Directory::new(entry.path());
+                        dirs.push(Entity::Directory(directory));
                     }
                 } else {
                     println!("Couldn't get file type for {:?}", entry.path());

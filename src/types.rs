@@ -2,10 +2,16 @@ use crate::get_dirs;
 use std::path::PathBuf;
 
 #[derive(Debug)]
+pub enum Entity {
+    Directory(Directory),
+    File(File),
+}
+
+#[derive(Debug)]
 pub struct Directory {
     pub path: PathBuf,
     pub size: usize,
-    pub children: Vec<Directory>,
+    pub children: Vec<Entity>,
 }
 
 impl Directory {
@@ -22,8 +28,17 @@ impl Directory {
 
         if deepth > 0 {
             for mut child in &mut self.children {
-                child.get_children(deepth - 1);
+                match child {
+                    Entity::Directory(child) => child.get_children(deepth - 1),
+                    Entity::File(_) => (),
+                }
             }
         }
     }
+}
+
+#[derive(Debug)]
+pub struct File {
+    pub path: PathBuf,
+    pub size: usize,
 }
