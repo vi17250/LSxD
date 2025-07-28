@@ -17,6 +17,7 @@ All notable changes to this project will be documented in this file. See [conven
 - 🎸 Create new() method for Directory - ([5a8d315](https://github.com/vi17250/LSxD/commit/5a8d3158a69f22218b605a7d41ea9c4160fed262)) - vi17250
 - 🎸 get directory size - ([4f4171b](https://github.com/vi17250/LSxD/commit/4f4171bc3e3f445a53653ea3523cdf664d0e975a)) - vi17250
 - 🎸 list files - ([87aa23d](https://github.com/vi17250/LSxD/commit/87aa23d12d7bcd637ca150af1d1e11da375438ee)) - vi17250
+- 🎸 human_size is more readable - ([5616ad3](https://github.com/vi17250/LSxD/commit/5616ad367db316e6325efda9629515c3e1566a20)) - vi17250
 
 ### 🐛 Bug Fixes
 
@@ -26,6 +27,8 @@ All notable changes to this project will be documented in this file. See [conven
 - 🐛 remove useless code - ([c86c2cf](https://github.com/vi17250/LSxD/commit/c86c2cf3a74a14b14f8bfa3183ab451d6b80da59)) - vi17250
 - 🐛 remove useless import - ([3e52038](https://github.com/vi17250/LSxD/commit/3e520380ee3d5a2dfce16618cccbcbd4d3b042af)) - vi17250
 - 🐛 Entity can be a directory or a file - ([ceb7f27](https://github.com/vi17250/LSxD/commit/ceb7f27f20b90d88350e91f0514b2b25bebbb435)) - vi17250
+- 🐛 remove useless code - ([6571a32](https://github.com/vi17250/LSxD/commit/6571a320cc8a0bdb3b7211219e80243f6d3f94c8)) - vi17250
+- 🐛 debug result - ([71ffc85](https://github.com/vi17250/LSxD/commit/71ffc8553815abead8c157d2db3087a636358624)) - vi17250
 
 ### 🚜 Refactor
 
@@ -38,6 +41,7 @@ All notable changes to this project will be documented in this file. See [conven
 - 💡 folder structure - ([d0535c7](https://github.com/vi17250/LSxD/commit/d0535c702f4c0d6a31c14d908b630b6007054d63)) - vi17250
 - 💡 remove useless code - ([b3e7399](https://github.com/vi17250/LSxD/commit/b3e73994de5c93ebbf0290835711895d3f26dbd0)) - vi17250
 - 💡 get_dir is a command - ([ef109aa](https://github.com/vi17250/LSxD/commit/ef109aa4fcb4bcaebf5d877258ee3379881aa035)) - vi17250
+- 💡 provides functions to list entities and sizes - ([255e351](https://github.com/vi17250/LSxD/commit/255e351dfd6f6f17391737b532dffb179f6c05f9)) - vi17250
 
 ### 📚 Documentation
 
