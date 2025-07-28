@@ -1,2 +1,2 @@
-pub mod get_dirs;
-pub mod get_files;
+pub mod get_list;
+pub mod get_size;
