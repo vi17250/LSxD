@@ -6,7 +6,7 @@ mod types;
 use crate::types::Directory;
 
 mod commands;
-
+mod display;
 mod output_color;
 
 const ROOT_DIR: &str = ".";
@@ -25,6 +25,8 @@ fn main() -> io::Result<()> {
 
     let mut current_dir: Directory = Directory::new(root_dir.clone());
     current_dir.get_children(deepth);
-    dbg!(current_dir);
+
+    current_dir.display(0);
+
     Ok(())
 }
