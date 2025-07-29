@@ -18,6 +18,7 @@ All notable changes to this project will be documented in this file. See [conven
 - 🎸 get directory size - ([4f4171b](https://github.com/vi17250/LSxD/commit/4f4171bc3e3f445a53653ea3523cdf664d0e975a)) - vi17250
 - 🎸 list files - ([87aa23d](https://github.com/vi17250/LSxD/commit/87aa23d12d7bcd637ca150af1d1e11da375438ee)) - vi17250
 - 🎸 human_size is more readable - ([5616ad3](https://github.com/vi17250/LSxD/commit/5616ad367db316e6325efda9629515c3e1566a20)) - vi17250
+- 🎸 display the output in a formatted way - ([0fc87db](https://github.com/vi17250/LSxD/commit/0fc87db8c8a120e6185bebc8cd253c37f455c829)) - vi17250
 
 ### 🐛 Bug Fixes
 
