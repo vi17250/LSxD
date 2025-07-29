@@ -51,6 +51,7 @@ All notable changes to this project will be documented in this file. See [conven
 - ✏️ Cargo manifest gives project informations - ([8bf157c](https://github.com/vi17250/LSxD/commit/8bf157ceed8a34c797716e344df304cde8766e6c)) - vi17250
 - ✏️ Be patient - ([f65d928](https://github.com/vi17250/LSxD/commit/f65d9284800b397f02a6744ba06cfbc7adfc1b6a)) - vi17250
 - ✏️ add key features - ([159a299](https://github.com/vi17250/LSxD/commit/159a2992924dbcc086209381afea9c42f34950a3)) - vi17250
+- ✏️ add screenshots - ([20bf943](https://github.com/vi17250/LSxD/commit/20bf94336481966387b497b219fa67b4d38a1099)) - Victor
 
 ### 🧪 Testing
 
