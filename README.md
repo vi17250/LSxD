@@ -14,3 +14,7 @@ A simple and naïve implementation of two unix commands ([`LS`](https://www.linu
 <img width="1920" height="1022" alt="Copie d'écran_20250729_222035" src="https://github.com/user-attachments/assets/2a919e89-0482-49ce-bf6d-e6f6231b7727" />
 
 <img width="1920" height="1022" alt="Copie d'écran_20250729_222057" src="https://github.com/user-attachments/assets/c81c677c-8405-4df5-98d2-13eb27cbe1da" />
+
+## Limitation
+
+Due to the way the Linux file system works, folder sizes are rounded to the block size (4.0kb)
