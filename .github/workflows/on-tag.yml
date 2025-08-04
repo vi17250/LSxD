@@ -1,4 +1,4 @@
-name: build-artifacts
+name: deploy-and-build-artifacts
 
 on:
   push:
@@ -33,6 +33,7 @@ jobs:
           CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN }}
 
   build:
+    name: Build artifacts
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
