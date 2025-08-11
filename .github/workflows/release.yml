@@ -30,6 +30,7 @@ jobs:
         uses: dtolnay/rust-toolchain@stable
       - name: Run release-plz
         uses: release-plz/action@v0.5
+        id: release-plz
         with:
           command: release-pr
           verboose: true
@@ -52,6 +53,7 @@ jobs:
         uses: dtolnay/rust-toolchain@stable
       - name: Run release-plz
         uses: release-plz/action@v0.5
+        id: release-plz
         with:
           command: release
           verboose: true
