@@ -32,8 +32,9 @@ jobs:
         uses: release-plz/action@v0.5
         with:
           command: release-pr
+          verboose: true
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.RELEASE_PLZ_TOKEN }}
           CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN }}
 
 # Release unpublished packages.
@@ -53,6 +54,7 @@ jobs:
         uses: release-plz/action@v0.5
         with:
           command: release
+          verboose: true
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.RELEASE_PLZ_TOKEN }}
           CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN }}
