@@ -19,7 +19,7 @@ jobs:
       contents: write
       pull-requests: write
     concurrency:
-      group: release-plz-${{ github.ref }}
+      group: lsxd-${{ github.ref }}
       cancel-in-progress: false
     steps:
       - name: Checkout repository
@@ -30,7 +30,7 @@ jobs:
         uses: dtolnay/rust-toolchain@stable
       - name: Run release-plz
         uses: release-plz/action@v0.5
-        id: release-plz
+        id: lsxd
         with:
           command: release-pr
           verbose: true
@@ -53,7 +53,7 @@ jobs:
         uses: dtolnay/rust-toolchain@stable
       - name: Run release-plz
         uses: release-plz/action@v0.5
-        id: release-plz
+        id: lsxd
         with:
           command: release
           verbose: true
