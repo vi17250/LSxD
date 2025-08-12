@@ -27,4 +27,6 @@ publish_allow_dirty = false
 semver_check = false
 
 [[package]]
-name = "lsxd"# name of the package to configure
+name = "lsxd" # name of the package to configure
+
+git_tag_name = "{{ package }}-v{{ version }}"
