@@ -26,3 +26,5 @@ publish_allow_dirty = false
 # disable running `cargo-semver-checks`
 semver_check = false
 
+[[package]]
+name = "lsxd"# name of the package to configure
