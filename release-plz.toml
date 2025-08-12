@@ -15,7 +15,9 @@ git_tag_enable = true
 git_release_enable = true
 
 # labels for the release PR
-pr_labels = ["release"]
+pr_labels = ["release"] = 
+
+release_label
 
 # disallow updating repositories with uncommitted changes
 allow_dirty = false
@@ -26,3 +28,5 @@ publish_allow_dirty = false
 # disable running `cargo-semver-checks`
 semver_check = false
 
+[[package]] # the double square brackets define a TOML table array
+name = "lsxd" # name of the package to configure
