@@ -1,4 +1,4 @@
-name: Build artifacts
+name: Compile artifacts
 
 run-name: ${{ github.actor }} is building artifacts 📦
 
@@ -28,19 +28,6 @@ jobs:
         include:
           - target: x86_64-unknown-linux-gnu
             os: ubuntu-22.04
-          - target: x86_64-apple-darwin
-            os: macos-13
-          - target: x86_64-unknown-linux-musl
-            os: ubuntu-22.04
-          - target: aarch64-unknown-linux-gnu
-            os: ubuntu-22.04
-          - target: aarch64-unknown-linux-musl
-            os: ubuntu-22.04
-          - target: aarch64-apple-darwin
-            os: macos-13
-          - target: x86_64-unknown-freebsd
-            os: ubuntu-22.04
-    timeout-minutes: 60
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -51,3 +38,10 @@ jobs:
       - uses: taiki-e/setup-cross-toolchain-action@v1
         with:
           target: ${{ matrix.target }}
+      - uses: taiki-e/upload-rust-binary-action@db101489b509ad1c7acce163e118eb36a1650f98 # v1.26.0
+        with:
+          bin: release-plz
+          target: ${{ matrix.target }}
+          tar: all
+          token: ${{ secrets.GITHUB_TOKEN }}
+
