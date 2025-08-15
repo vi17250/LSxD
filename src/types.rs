@@ -10,17 +10,15 @@ pub enum Entity {
 #[derive(Debug)]
 pub struct Directory {
     pub path: PathBuf,
-    pub size: usize,
     pub human_size: String,
     pub children: Vec<Entity>,
 }
 
 impl Directory {
     pub fn new(path: PathBuf) -> Directory {
-        let (size, human_size) = get_size::directory(path.clone());
+        let (_size, human_size) = get_size::directory(path.clone());
         Directory {
             path: path.clone(),
-            size,
             human_size,
             children: Vec::new(),
         }
@@ -42,16 +40,14 @@ impl Directory {
 #[derive(Debug)]
 pub struct File {
     pub path: PathBuf,
-    pub size: usize,
     pub human_size: String,
 }
 
 impl File {
     pub fn new(path: PathBuf) -> File {
-        let (size, human_size) = get_size::file(path.clone());
+        let (_size, human_size) = get_size::file(path.clone());
         File {
             path: path.clone(),
-            size,
             human_size,
         }
     }
