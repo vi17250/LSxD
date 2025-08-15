@@ -7,6 +7,7 @@ A simple and naïve implementation of two unix commands ([`LS`](https://www.linu
 - [Features](#features)
 - [Screenshots](#screenshots)
 - [Install](#install)
+- [Arguments](#arguments)
 - [Limitation](#limitation)
 
 ## Features
@@ -48,6 +49,12 @@ A simple and naïve implementation of two unix commands ([`LS`](https://www.linu
     ```bash
      echo export PATH=$PATH:/opt/lsxd/ >> {PATH/TO/YOUR/.BASHRC_FILE}
     ```
+## Arguments
+
+|Arg|Description|Default|
+|-|-|-|
+|`-d`|Display depth|0|
+
 ## Limitation
 
 Due to the way the Linux file system works, folder sizes are rounded to the block size (4.0kb)
