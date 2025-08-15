@@ -6,7 +6,6 @@ A simple and naïve implementation of two unix commands ([`LS`](https://www.linu
 ## Table of Contents
 - [Features](#features)
 - [Screenshots](#screenshots)
-- [Pre-requisites](#pre-requisites)
 - [Install](#install)
 - [Limitation](#limitation)
 
@@ -22,30 +21,27 @@ A simple and naïve implementation of two unix commands ([`LS`](https://www.linu
 
 ![lsxd without -d option](https://github.com/user-attachments/assets/c81c677c-8405-4df5-98d2-13eb27cbe1da)
 
-## Pre-requisites
-
-1. [Install `rustup`](https://www.rust-lang.org/tools/install) to compile the source code for our device/os
-
 ## Install
 
-1. Clone this repository:
+### Using cargo:
 
-   ```bash
-   git clone `https://github.com/vi17250/lsxd`
-   ```
     ```bash
-    cd lsxd
+        cargo install lsxd
     ```
 
-2. Build `lsxd` binary 
+### Using GitHub releases
+
+1. Download `lsxd` from [releases page](https://github.com/vi17250/lsxd/releases)
+
+2. Unzip the .tar.gz archive
     ```bash
-    cargo build
+   tar -zxvf {ARCHIVE.tar.gz} 
     ```
 
 3. Install `lsxd` binary:
 
    ```bash
-    cp /target/debug/lsxd /opt/lsxd
+    install -m 111 lsxd /opt/lsxd
    ```
 
 4. Run `lsxd` from everywhere on your computer 
