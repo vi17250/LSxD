@@ -9,6 +9,8 @@ mod commands;
 mod display;
 mod output_color;
 
+mod compare;
+
 const ROOT_DIR: &str = ".";
 
 #[derive(Parser, Debug)]
@@ -22,7 +24,6 @@ fn main() -> io::Result<()> {
     let args = Args::parse();
     let deepth = args.deepth;
     let root_dir: PathBuf = PathBuf::from(ROOT_DIR);
-
     let mut current_dir: Directory = Directory::new(root_dir.clone());
     current_dir.get_children(deepth);
 
