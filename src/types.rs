@@ -1,25 +1,28 @@
 use crate::commands::{get_list, get_size};
+use core::cmp::Ordering;
 use std::path::PathBuf;
 
-#[derive(Debug)]
+#[derive(Debug, Clone, PartialEq, PartialOrd, Eq)]
 pub enum Entity {
     Directory(Directory),
     File(File),
 }
 
-#[derive(Debug)]
+#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Clone)]
 pub struct Directory {
     pub path: PathBuf,
     pub human_size: String,
+    pub size: usize,
     pub children: Vec<Entity>,
 }
 
 impl Directory {
     pub fn new(path: PathBuf) -> Directory {
-        let (_size, human_size) = get_size::directory(path.clone());
+        let (size, human_size) = get_size::directory(path.clone());
         Directory {
             path: path.clone(),
             human_size,
+            size,
             children: Vec::new(),
         }
     }
@@ -37,18 +40,20 @@ impl Directory {
     }
 }
 
-#[derive(Debug)]
+#[derive(Debug, PartialEq, PartialOrd, Ord, Eq, Clone)]
 pub struct File {
     pub path: PathBuf,
     pub human_size: String,
+    pub size: usize,
 }
 
 impl File {
     pub fn new(path: PathBuf) -> File {
-        let (_size, human_size) = get_size::file(path.clone());
+        let (size, human_size) = get_size::file(path.clone());
         File {
             path: path.clone(),
             human_size,
+            size,
         }
     }
 }
