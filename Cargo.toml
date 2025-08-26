@@ -1,6 +1,6 @@
 [package]
 name = "lsxd"
-version = "0.1.17"
+version = "0.1.18"
 edition = "2024"
 authors = ["Victor Aubinaud"]
 description = "A easy way to display directories and their size"
