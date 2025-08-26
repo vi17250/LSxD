@@ -15,6 +15,7 @@ A simple and naïve implementation of two unix commands ([`LS`](https://www.linu
 - Displays the human readable size of files
 - Displays the human readable size of subdirectories
 - Can be recursive (using `-d` argument)
+- Sort by size (using `-s` argument)
 
 ## Screenshots
 
@@ -49,11 +50,13 @@ A simple and naïve implementation of two unix commands ([`LS`](https://www.linu
     ```bash
      echo export PATH=$PATH:/opt/lsxd/ >> {PATH/TO/YOUR/.BASHRC_FILE}
     ```
+
 ## Arguments
 
-|Arg|Description|Default|
-|-|-|-|
-|`-d`|Display depth|0|
+|Arg|Description|Default|Example|
+|-|-|-|-|
+|`-d`|Display depth|0|-d 2|
+|`-s`|Sort by size|false|-s|
 
 ## Limitation
 
