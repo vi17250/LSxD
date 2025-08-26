@@ -1,5 +1,5 @@
-use crate::types::{Directory, Entity, File};
-use std::{cmp::Ordering, fmt::Display};
+use crate::types::Entity;
+use std::cmp::Ordering;
 
 impl Eq for Entity {}
 

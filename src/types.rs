@@ -1,5 +1,4 @@
 use crate::commands::{get_list, get_size};
-use core::cmp::Ordering;
 use std::path::PathBuf;
 
 #[derive(Debug, Clone)]
