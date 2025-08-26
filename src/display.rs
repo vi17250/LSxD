@@ -4,10 +4,10 @@ use crate::types::{Directory, Entity};
 impl Directory {
     pub fn display(&self, increment: u8) {
         let path = self.path.display();
-        let size = self.human_size.coloring();
+        let human_size = self.human_size.coloring();
         let picto = String::from("📁");
         tabs(increment);
-        println!("{picto} {path} {size} ");
+        println!("{picto} {path} {human_size} ");
         for child in &self.children {
             match child {
                 Entity::Directory(c) => c.display(increment + 1),
