@@ -1,5 +1,4 @@
 # LSxD
-> It's like LS, but with a D 😛
 
 A simple and naïve implementation of two unix commands ([`LS`](https://www.linux.org/docs/man1/ls.html) and [`DU`](https://www.linux.org/docs/man1/du.html)) written in [Rust](https://www.rust-lang.org/) ❤️
 
