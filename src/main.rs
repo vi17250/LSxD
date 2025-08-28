@@ -17,14 +17,14 @@ const ROOT_DIR: &str = ".";
 #[command(version, about, long_about = None)]
 struct Args {
     #[arg(short, long, default_value_t = 0)]
-    deepth: u8,
+    depth: u8,
     #[arg(short, long, default_value_t = false)]
     sort: bool,
 }
 
 fn main() -> io::Result<()> {
     let args = Args::parse();
-    let deepth = args.deepth;
+    let deepth = args.depth;
     let sort = args.sort;
     let root_dir: PathBuf = PathBuf::from(ROOT_DIR);
     let mut current_dir: Directory = Directory::new(root_dir.clone());
